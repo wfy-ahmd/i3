@@ -108,21 +108,22 @@ export function Hero() {
             className="mt-5 flex h-10 items-center font-num text-lg font-semibold tracking-wide overflow-hidden">
 
             <div className="relative flex items-center">
-              {/* Animated role with character-by-character reveal */}
-              <AnimatePresence mode="wait">
-                <motion.div
-                  key={roleIdx}
-                  className="flex items-center"
-                  initial={{ opacity: 0, y: 15 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -15 }}
-                  transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
-                >
-                  <span className="text-soft-pink font-bold">{currentRole}</span>
-                  <span className="mx-3 text-mid-dark text-xl">·</span>
-                  <span className="text-mid-dark">{subtitle}</span>
-                </motion.div>
-              </AnimatePresence>
+              <div className="flex min-w-[155px] items-center">
+                <AnimatePresence mode="wait">
+                  <motion.div
+                    key={roleIdx}
+                    initial={{ opacity: 0, y: 15 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -15 }}
+                    transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
+                    className="whitespace-nowrap text-soft-pink font-bold"
+                  >
+                    {currentRole}
+                  </motion.div>
+                </AnimatePresence>
+              </div>
+              <span className="mx-3 text-mid-dark text-xl">·</span>
+              <span className="text-mid-dark whitespace-nowrap">{subtitle}</span>
             </div>
           </motion.div>
 
@@ -163,7 +164,7 @@ export function Hero() {
             }}
             className="mt-9 flex flex-wrap items-center gap-4">
 
-            <MagneticButton variant="primary" href="#contact">
+            <MagneticButton variant="primary" href="/CV/Ilma_Niyas_CV.pdf" target="_blank" rel="noopener noreferrer">
               <DownloadIcon size={16} /> Download CV
             </MagneticButton>
             <MagneticButton variant="secondary" href="#contact">

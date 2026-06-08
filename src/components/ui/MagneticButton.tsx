@@ -6,13 +6,19 @@ interface Props {
   onClick?: () => void;
   variant?: 'primary' | 'secondary';
   className?: string;
+  target?: string;
+  rel?: string;
+  download?: string | boolean;
 }
 export function MagneticButton({
   children,
   href,
   onClick,
   variant = 'primary',
-  className = ''
+  className = '',
+  target,
+  rel,
+  download
 }: Props) {
   const ref = useRef<HTMLAnchorElement>(null);
   const [pos, setPos] = useState({
@@ -40,6 +46,9 @@ export function MagneticButton({
     <motion.a
       ref={ref}
       href={href}
+      target={target}
+      rel={rel}
+      download={download}
       onClick={onClick}
       onMouseMove={handleMove}
       onMouseLeave={() =>
