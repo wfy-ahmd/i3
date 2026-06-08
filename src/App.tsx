@@ -3,6 +3,7 @@ import { useScreenInit } from './useScreenInit';
 import { Background } from './components/effects/Background';
 import { Particles } from './components/effects/Particles';
 import { ScrollProgress } from './components/effects/ScrollProgress';
+import { SmoothScroll } from './components/effects/SmoothScroll';
 import { Loader } from './components/effects/Loader';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/sections/Hero';
@@ -21,6 +22,7 @@ export function App() {
   useScreenInit('home');
   return (
     <div className="relative min-h-screen w-full bg-background font-body text-white">
+      <SmoothScroll />
       <Loader />
       <Background />
       <Particles />
