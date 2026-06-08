@@ -135,6 +135,31 @@ export interface Project {
 
 export const PROJECTS: Project[] = [
   {
+    title: 'AquaGuard',
+    icon: 'Droplets',
+    desc: 'A smart aquarium monitoring system developed as a university project. It allows users to upload fish videos for behavior analysis while also monitoring water quality using sensor-based readings such as temperature and pH.',
+    impacts: [
+      'Early detection of abnormal conditions',
+      'Water quality sensor monitoring',
+      'Mobile application reports'
+    ],
+    tech: ['Python', 'React Native TSX', 'FastAPI', 'Supabase', 'ESP32'],
+    featured: true,
+    image: '/aquaguard1.jpg'
+  },
+  {
+    title: 'Fungi Detection',
+    icon: 'Microscope',
+    desc: 'Detecting fungi patterns from image data using computer vision and machine learning. Designed to support faster and more consistent visual identification by extracting image features and applying a trained model.',
+    impacts: [
+      'Visual identification support',
+      'Image feature extraction',
+      'Pattern classification'
+    ],
+    tech: ['Python', 'OpenCV', 'Machine Learning', 'Computer Vision'],
+    image: '/fungi-detection.png'
+  },
+  {
     title: 'Project Management Dashboard',
     icon: 'LayoutDashboard',
     desc: 'A comprehensive dashboard for tracking project milestones, resource allocation, and team performance metrics. Features real-time progress visualization and automated reporting.',
@@ -144,7 +169,6 @@ export const PROJECTS: Project[] = [
       'Multi-team collaboration'],
 
     tech: ['React', 'Node.js', 'SQL'],
-    featured: true,
     image: '/project-dashboard.png'
   },
   {
@@ -329,7 +353,7 @@ export const CONTACTS = [
   { label: 'Location', value: 'Akurana, Kandy', icon: 'MapPin', href: '#' },
   {
     label: 'LinkedIn',
-    value: 'https://lk.linkedin.com/in/ilma-niyas-2848a9337',
+    value: 'https://www.linkedin.com/in/ilma-niyas-69a15922a/',
     icon: 'Linkedin',
-    href: 'https://lk.linkedin.com/in/ilma-niyas-2848a9337'
+    href: 'https://www.linkedin.com/in/ilma-niyas-69a15922a/'
   }];

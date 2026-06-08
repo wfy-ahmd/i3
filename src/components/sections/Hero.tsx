@@ -190,7 +190,7 @@ export function Hero() {
               {
                 icon: LinkedinIcon,
                 label: 'LinkedIn',
-                href: 'https://lk.linkedin.com/in/ilma-niyas-2848a9337'
+                href: 'https://www.linkedin.com/in/ilma-niyas-69a15922a/'
               },
               {
                 icon: GithubIcon,

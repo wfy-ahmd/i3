@@ -10,7 +10,8 @@ import {
   GithubIcon,
   ExternalLinkIcon,
   ArrowRightIcon,
-  CheckIcon
+  CheckIcon,
+  DropletsIcon
 } from
   'lucide-react';
 import { SectionHeader } from '../ui/SectionHeader';
@@ -21,7 +22,8 @@ const ICONS: Record<string, React.ElementType> = {
   CheckSquare: CheckSquareIcon,
   Globe: GlobeIcon,
   Microscope: MicroscopeIcon,
-  Bot: BotIcon
+  Bot: BotIcon,
+  Droplets: DropletsIcon
 };
 const ease = [0.22, 1, 0.36, 1] as const;
 function TiltCard({
