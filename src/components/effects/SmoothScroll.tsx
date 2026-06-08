@@ -16,11 +16,12 @@ export function SmoothScroll() {
 
     lenisRef.current = lenis;
 
+    let rafId: number;
     function raf(time: number) {
       lenis.raf(time);
-      requestAnimationFrame(raf);
+      rafId = requestAnimationFrame(raf);
     }
-    requestAnimationFrame(raf);
+    rafId = requestAnimationFrame(raf);
 
     // Intercept all anchor (#) clicks for smooth scrolling
     const handleClick = (e: MouseEvent) => {
@@ -46,6 +47,7 @@ export function SmoothScroll() {
 
     return () => {
       document.removeEventListener('click', handleClick);
+      cancelAnimationFrame(rafId);
       lenis.destroy();
     };
   }, []);

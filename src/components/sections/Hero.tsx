@@ -113,126 +113,14 @@ export function Hero() {
                 <motion.div
                   key={roleIdx}
                   className="flex items-center"
-                  initial="hidden"
-                  animate="visible"
-                  exit="exit"
+                  initial={{ opacity: 0, y: 15 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -15 }}
+                  transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
                 >
-                  {/* Role text with staggered character animation */}
-                  <motion.span
-                    className="inline-flex text-soft-pink"
-                    variants={{
-                      hidden: {},
-                      visible: {
-                        transition: {
-                          staggerChildren: 0.03,
-                          delayChildren: 0.05,
-                        }
-                      },
-                      exit: {
-                        transition: {
-                          staggerChildren: 0.02,
-                          staggerDirection: -1,
-                        }
-                      }
-                    }}
-                  >
-                    {currentRole.split('').map((char, i) => (
-                      <motion.span
-                        key={`${roleIdx}-${i}`}
-                        className="inline-block"
-                        style={{ whiteSpace: char === ' ' ? 'pre' : undefined }}
-                        variants={{
-                          hidden: {
-                            opacity: 0,
-                            y: 20,
-                            rotateX: -90,
-                            filter: 'blur(4px)',
-                          },
-                          visible: {
-                            opacity: 1,
-                            y: 0,
-                            rotateX: 0,
-                            filter: 'blur(0px)',
-                            transition: {
-                              type: 'spring',
-                              damping: 20,
-                              stiffness: 200,
-                            }
-                          },
-                          exit: {
-                            opacity: 0,
-                            y: -15,
-                            rotateX: 60,
-                            filter: 'blur(3px)',
-                            transition: {
-                              duration: 0.2,
-                              ease: [0.36, 0, 0.66, -0.56],
-                            }
-                          }
-                        }}
-                      >
-                        {char}
-                      </motion.span>
-                    ))}
-                  </motion.span>
-
-                  {/* Animated dot separator */}
-                  <motion.span
-                    className="mx-3 text-mid-dark text-xl"
-                    variants={{
-                      hidden: { opacity: 0, scale: 0 },
-                      visible: {
-                        opacity: 1,
-                        scale: 1,
-                        transition: {
-                          delay: currentRole.length * 0.03 + 0.15,
-                          type: 'spring',
-                          damping: 15,
-                          stiffness: 300,
-                        }
-                      },
-                      exit: {
-                        opacity: 0,
-                        scale: 0,
-                        transition: { duration: 0.15 }
-                      }
-                    }}
-                  >
-                    ·
-                  </motion.span>
-
-                  {/* IT Undergraduate with slide-in animation */}
-                  <motion.span
-                    className="text-mid-dark"
-                    variants={{
-                      hidden: {
-                        opacity: 0,
-                        x: -20,
-                        filter: 'blur(4px)',
-                      },
-                      visible: {
-                        opacity: 1,
-                        x: 0,
-                        filter: 'blur(0px)',
-                        transition: {
-                          delay: currentRole.length * 0.03 + 0.25,
-                          duration: 0.5,
-                          ease: [0.22, 1, 0.36, 1],
-                        }
-                      },
-                      exit: {
-                        opacity: 0,
-                        x: 20,
-                        filter: 'blur(3px)',
-                        transition: {
-                          duration: 0.2,
-                          ease: [0.36, 0, 0.66, -0.56],
-                        }
-                      }
-                    }}
-                  >
-                    {subtitle}
-                  </motion.span>
+                  <span className="text-soft-pink font-bold">{currentRole}</span>
+                  <span className="mx-3 text-mid-dark text-xl">·</span>
+                  <span className="text-mid-dark">{subtitle}</span>
                 </motion.div>
               </AnimatePresence>
             </div>
