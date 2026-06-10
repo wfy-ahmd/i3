@@ -59,7 +59,7 @@ export const EDUCATION = [
     tag: 'Advanced Level (A/L)',
     title: 'Sri Lanka G.C.E. Advanced Level',
     org: 'Azhar College Akurana',
-    desc: 'Completed Advanced Level examinations with a focus on the Technology stream, building the foundational knowledge for pursuing higher education in Information Technology.',
+    desc: 'Completed Advanced Level examinations with a focus on the Commerce stream, building the foundational knowledge for pursuing higher education in Information Technology.',
     coursework: []
   },
   {
